@@ -3,7 +3,7 @@
 NUMBER1=100
 NUMBER2=200
 
-TIMESTAMP=$(data)
+TIMESTAMP=$(Data)
 
 echo "script executed at : $TIMESTAMP "
 
