@@ -13,4 +13,4 @@ else
 fi
 else 
     echo "nginx is already installed ... nothing to do"
-if     
+fi   
