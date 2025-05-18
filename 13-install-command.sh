@@ -12,8 +12,3 @@ else
    echo "Installing MySQL is ... FAILURE"
    exit 1 # give other than 0 up to  127
 fi
-if
-else 
-    echo "mysql is already installed"
-
-fi
