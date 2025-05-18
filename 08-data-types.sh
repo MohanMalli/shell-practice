@@ -1,7 +1,7 @@
 #!/bin/bash
 
-NUMBER1=Mohan # here we are giving Sting 
-NUMBER2=200
+NUMBER1=100  
+NUMBER2=Mohan # here we are giving Sting 
 
 TIMESTAMP=$(date) # here date value will store in TIMESTAMP
 
