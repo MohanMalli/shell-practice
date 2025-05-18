@@ -17,7 +17,7 @@ else
    echo "Installing MySQL is ... FAILURE"
    exit 1 # give other than 0 up to  127
 fi
-dnf install nodejs -y
+dnf module disable nodejs -y
 
 if [ $? -eq 0 ]  # [ 0 = 0 ]
 then
@@ -26,7 +26,7 @@ else
    echo "Installing nodejs is ... FAILURE"
    exit 1 # give other than 0 up to  127
 fi
-dnf install nginx -y
+dnf module disable nginx -y
 
 if [ $? -eq 0 ]  # [ 0 = 0 ]
 then
