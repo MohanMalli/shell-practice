@@ -1,10 +1,10 @@
 #!/bin/bash
 if [ $? -ne 0 ] #[1 =/ 0 ]
 then 
-echo "MySQL is not installed ... goining to install it"
+  echo "MySQL is not installed ... goining to install it"
 
-dnf install mysql -y
-
+  dnf install mysql -y
+fi
 if [ $? -eq 0 ]  # [ 0 = 0 ]
 then
     echo "Installing MySQL is ... SUCCESS"
