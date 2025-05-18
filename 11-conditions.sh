@@ -7,4 +7,5 @@ then
      echo "Given number $NUMBER is less then 10"
 else
      echo "Given number $NUMBER is not less then 10"
+     exit 1
 if    
