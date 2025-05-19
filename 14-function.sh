@@ -35,24 +35,24 @@ if [ $? -ne 0 ] #[1 =/ 0 ]
 fi 
 
 
-# dnf  list installed nginx 
+dnf  list installed nginx 
 
-# if [ $? -ne 0 ] #[1 =/ 0 ]
-#  then 
-#   echo "nginx is not installed ... goining to install it"
-#   dnf install nginx -y
-#   VALIDATE $? "nginx"
-#  else 
-#     echo "nginx is already installed ... nothing to do"
-# fi 
+if [ $? -ne 0 ] #[1 =/ 0 ]
+ then 
+  echo "nginx is not installed ... goining to install it"
+  dnf install nginx -y
+  VALIDATE $? "nginx"
+ else 
+    echo "nginx is already installed ... nothing to do"
+fi 
 
-#  dnf  list installed python3 
+ dnf  list installed python3 
 
-# if [ $? -ne 0 ] #[1 =/ 0 ]
-# then 
-#   echo "python3 is not installed ... goining to install it"
-#   dnf install python3 -y
-#   VALIDATE $? "python3"
-# else 
-#     echo "python3 is already installed ... nothing to do"
-# fi 
+if [ $? -ne 0 ] #[1 =/ 0 ]
+then 
+  echo "python3 is not installed ... goining to install it"
+  dnf install python3 -y
+  VALIDATE $? "python3"
+else 
+    echo "python3 is already installed ... nothing to do"
+fi 
