@@ -9,63 +9,50 @@ then
 else 
     echo "you are running with  root access"
 fi
+VALIDATE(){
 
+  if [ $1 -eq 0 ]  # [ 0 = 0 ]
+  then
+     echo "Installing mysql is ... SUCCESS"
+  else
+     echo "Installing mysql is ... FAILURE"
+     exit 1 # give other than 0 up to  127
+ fi
+
+}
 dnf  list installed mysql 
 
 # check already installed or not.if Installed $? is 0. then
 # if not installed $? is not 0. expression is true
 
-  if [ $? -ne 0 ] #[1 =/ 0 ]
+if [ $? -ne 0 ] #[1 =/ 0 ]
  then 
   echo "mysql is not installed ... goining to install it"
-
-dnf install mysql -y
-
- if [ $? -eq 0 ]  # [ 0 = 0 ]
- then
-     echo "Installing mysql is ... SUCCESS"
- else
-     echo "Installing mysql is ... FAILURE"
-     exit 1 # give other than 0 up to  127
- fi
+  dnf install mysql -y
+  VALIDATE $? "MYSQL"
  else 
     echo "mysql is already installed ... nothing to do"
- fi 
+fi 
 
-dnf  list installed nginx 
 
- if [ $? -ne 0 ] #[1 =/ 0 ]
- then 
-  echo "nginx is not installed ... goining to install it"
+# dnf  list installed nginx 
 
-dnf install nginx -y
+# if [ $? -ne 0 ] #[1 =/ 0 ]
+#  then 
+#   echo "nginx is not installed ... goining to install it"
+#   dnf install nginx -y
+#   VALIDATE $? "nginx"
+#  else 
+#     echo "nginx is already installed ... nothing to do"
+# fi 
 
- if [ $? -eq 0 ]  # [ 0 = 0 ]
- then
-     echo "Installing nginx is ... SUCCESS"
- else
-     echo "Installing nginx is ... FAILURE"
-     exit 1 # give other than 0 up to  127
- fi
- else 
-    echo "nginx is already installed ... nothing to do"
- fi 
+#  dnf  list installed python3 
 
- dnf  list installed python3 
-
- if [ $? -ne 0 ] #[1 =/ 0 ]
- then 
-  echo "python3 is not installed ... goining to install it"
-
-dnf install python3 -y
-
- if [ $? -eq 0 ]  # [ 0 = 0 ]
- then
-     echo "Installing python3 is ... SUCCESS"
- else
-     echo "Installing python3 is ... FAILURE"
-     exit 1 # give other than 0 up to  127
- fi
- else 
-    echo "python3 is already installed ... nothing to do"
- fi 
+# if [ $? -ne 0 ] #[1 =/ 0 ]
+# then 
+#   echo "python3 is not installed ... goining to install it"
+#   dnf install python3 -y
+#   VALIDATE $? "python3"
+# else 
+#     echo "python3 is already installed ... nothing to do"
+# fi 
