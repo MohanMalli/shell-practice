@@ -67,3 +67,14 @@ then
 else 
     echo "nodejs is already installed ... nothing to do"
 fi 
+
+dnf  list installed mongodb
+
+if [ $? -ne 0 ] #[1 =/ 0 ]
+ then 
+  echo "mongodb is not installed ... goining to install it"
+  dnf install mongodb -y
+  VALIDATE $? "mongodb"
+ else 
+    echo "mongodb is already installed ... nothing to do"
+fi 
