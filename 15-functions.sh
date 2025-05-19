@@ -16,6 +16,8 @@ then
     echo " MongoDB already installed"
 
 else
-   echo " MongoDB is not installed ... now going to install
+   echo "MongoDB is not installed ... now going to install"
    dnf install MongoDB -y
-fi   
+   exit 1
+fi 
+
