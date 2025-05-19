@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $? -eq 0 ]  # [ 0 = 0 ]
+if [ $? -ne 0 ]  # [ 0 = 0 ]
 then
     echo "Installing MySQL is ... SUCCESS"
 else
