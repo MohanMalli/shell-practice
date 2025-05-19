@@ -20,46 +20,46 @@ VALIDATE(){
  fi
 
 }
-# dnf  list installed mysql 
+dnf  list installed mysql 
 
-# # check already installed or not.if Installed $? is 0. then
-# # if not installed $? is not 0. expression is true
+# check already installed or not.if Installed $? is 0. then
+# if not installed $? is not 0. expression is true
 
-# if [ $? -ne 0 ] # here 
-#  then 
-#   echo "mysql is not installed ... goining to install it"
-#   dnf install mysql -y
-#   VALIDATE $? "MYSQL" 
-#  else 
-#     echo "mysql is already installed ... nothing to do"
-# fi 
+if [ $? -ne 0 ] # here 
+ then 
+  echo "mysql is not installed ... goining to install it"
+  dnf install mysql -y
+  VALIDATE $? "MYSQL" 
+ else 
+    echo "mysql is already installed ... nothing to do"
+fi 
 
 
-# dnf  list installed nginx 
+dnf  list installed nginx 
 
-# if [ $? -ne 0 ] #[1 =/ 0 ]
-#  then 
-#   echo "nginx is not installed ... goining to install it"
-#   dnf install nginx -y
-#   VALIDATE $? "nginx"
-#  else 
-#     echo "nginx is already installed ... nothing to do"
-# fi 
+if [ $? -ne 0 ] #[1 =/ 0 ]
+ then 
+  echo "nginx is not installed ... goining to install it"
+  dnf install nginx -y
+  VALIDATE $? "nginx"
+ else 
+    echo "nginx is already installed ... nothing to do"
+fi 
 
-#  dnf  list installed python3 
+ dnf  list installed python3 
 
-# if [ $? -ne 0 ] #[1 =/ 0 ]
-# then 
-#   echo "python3 is not installed ... goining to install it"
-#   dnf install python3 -y
-#   VALIDATE $? "python3"
-# else 
-#     echo "python3 is already installed ... nothing to do"
-# fi 
+if [ $? -ne 0 ] #[1 =/ 0 ]
+then 
+  echo "python3 is not installed ... goining to install it"
+  dnf install python3 -y
+  VALIDATE $? "python3"
+else 
+    echo "python3 is already installed ... nothing to do"
+fi 
 
 dnf  list installed nodejs 
 
-if [ $? -ne 0 ] 
+if [ $? -ne 0 ] # 0 =/ 0
 then 
   echo "nodejs is not installed ... goining to install it"
   dnf install nodejs -y
