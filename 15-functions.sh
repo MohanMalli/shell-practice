@@ -12,13 +12,14 @@ else
 fi 
 
 dnf list installed MongoDB
-if [ $? -eq 0]
+if [ $? -nq 0]
 then 
-    echo " MongoDB already installed"
+    echo "MongoDB is not installed ... now going to install"
+    dnf install MongoDB -y
     
 else
-   echo "MongoDB is not installed ... now going to install"
-   dnf install MongoDB -y
+   echo "MongoDB is installed ... nothing to do"
+   
 
  if [ $? -eq 0 ]  # [ 0 = 0 ]
  then
