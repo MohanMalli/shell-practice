@@ -15,10 +15,17 @@ dnf list installed MongoDB
 if [ $? -eq 0]
 then 
     echo " MongoDB already installed"
-    exit 1
+    
 else
    echo "MongoDB is not installed ... now going to install"
    dnf install MongoDB -y
-   
-fi 
+
+ if [ $? -eq 0 ]  # [ 0 = 0 ]
+ then
+    echo "Installing MongoDB is ... SUCCESS"
+ else
+   echo "Installing MongoDB is ... FAILURE"
+   exit 1 # give other than 0 up to  127
+ fi
+fi
 
