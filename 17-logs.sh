@@ -9,7 +9,7 @@ N="\e[0m"
 
 LOGS_FLODER="/var/log/shellscript-logs"  # we have to create directory
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)  # here we are seperating each script in wth they script name. 
-LOG_FILE="$LOGS_FOLDER/SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FLODER  #here -p stands for creating a directory .if not creadted or else if created it just leave it goes forward.
 
