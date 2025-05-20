@@ -5,7 +5,7 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 y="\e[33m"
-N='\e[0m"
+N="\e[0m"
 
 LOGS_FLODER="/var/log/shellscript-logs"  # we have to create directory
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)  # here we are seperating each script in wth they script name. 
