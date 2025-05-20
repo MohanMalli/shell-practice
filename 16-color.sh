@@ -12,7 +12,26 @@ then
     echo -e "$R ERROR::Please run this script with root access $N"
     exit 1
 else 
-    echo -e " $G you are running with root access $N"
+    echo -e " you are running with root access "
 
 fi
+VALIDATE(){
+    if [$1 -eq 0 ]
+    then
+        echo -e "Installing $2 is ... $G SUCCESS $N"
+    else
+        echo -e "Installing $2 is ... $R FAILURE $N"
+        exit 1
+    fi
+ }
 
+dnf list instelled mysql # here it gives a $? is 0 if installed . if not installed then $? is 1
+if [ $? -ne 0 ]
+then
+    echo -e "$R MYSQL is not installed...$G going to install it $N" 
+    dnf install mysql -y
+    VALIDATE $? "MYSQL"
+else
+    echo -e "Nothing to do MySQL..$Y already installed $N"
+
+fi        
