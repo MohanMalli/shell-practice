@@ -12,12 +12,12 @@ fi
 VALIDATE(){
 
   if [ $1 -eq 0 ]  # [ 0 = 0 ]
-  then
+   then
      echo "Installing mysql is ... SUCCESS"
-  else
+    else
      echo "Installing mysql is ... FAILURE"
      exit 1 # give other than 0 up to  127
- fi
+  fi
 
 }
 dnf  list installed mysql 
