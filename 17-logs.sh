@@ -5,16 +5,17 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 y="\e[33m"
-N='\e[0N"
+N='\e[0m"
 
 LOGS_FLODER="/var/log/shellscript-logs"  # we have to create directory
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)  # here we are seperating each script in wth they script name. 
 LOG_FILE="$LOGS_FOLDER/SCRIPT_NAME.log"
 
-mkdir -p LOGS_FLODER  # here -p stands for creating a directory .if not creadted or else if created it just leave it goes forward.
+mkdir -p $LOG_FLODER   #here -p stands for creating a directory .if not creadted or else if created it just leave it goes forward.
+
 echo "Script started executing at: $(date)" &>>$LOG_FILE
 
-# -e stands for enabling colors
+   # -e strand for enabling colors
 
 if [ $USERID -ne 0 ]
 then
