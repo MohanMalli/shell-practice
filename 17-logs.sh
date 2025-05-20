@@ -10,7 +10,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)  # here we are seperating each script in
 LOG_FILE="$LOGS_FLODER/$SCRIPT_NAME.log"
 
 mkdir -pv  $LOGS_FLODER                   # -p stands for creating a directory .if not create or else if created it just leave it goes forward
-echo "Script started executing at: $(date)" 
+echo "Script started executing at: $(date)" &>>$LOG_FILE
 
    # -e strand for enabling colors
 if [ $USERID -ne 0 ]
