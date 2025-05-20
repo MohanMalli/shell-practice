@@ -11,12 +11,11 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)  # here we are seperating each script in
 LOG_FILE="$LOGS_FLODER/$SCRIPT_NAME.log"
 
 mkdir -p  $LOGS_FLODER                   # -p stands for creating a directory .if not create or else if created it just leave it goes forward
-echo "Script started executing at: $(date)" | tree -a $LOG_FILE
+echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
-   # -e strand for enabling colors
 if [ $USERID -ne 0 ]
 then
-    echo -e "$R ERROR::Pease run this script with root access $N" | tree -a $LOG_FILE #ere & means store both outputs >> append the data.
+    echo -e "$R ERROR::Pease run this script with root access $N" | tee -a $LOG_FILE #ere & means store both outputs >> append the data.
     exit 1
 else 
     echo  "you are running with root access" | tee -a $LOG_FILE
