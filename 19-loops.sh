@@ -32,7 +32,8 @@ VALIDATE(){
     fi
 }
 
-for package in ${PACKAGES[@]}
+#for package in ${PACKAGES[@]}
+for package in $@ # here dynimcally we can pass aeguments.
                        
 do
     dnf list installed $package &>>$LOG_FILE
