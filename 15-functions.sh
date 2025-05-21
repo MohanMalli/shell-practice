@@ -15,7 +15,7 @@ dnf list installed MongoDB
 if [ $? -ne 0 ]
 then 
     echo "MongoDB is not installed ... now going to install"
-    dnf install MongoDB -y
+    dnf install mongodb -y
     
 else
    echo "MongoDB is installed ... nothing to do"
