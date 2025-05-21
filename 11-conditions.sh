@@ -8,4 +8,4 @@ then
 else
      echo "Given number $NUMBER is not less then 10"
      exit 1
-fi    
+fi     
