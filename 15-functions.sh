@@ -11,21 +11,21 @@ else
     exit 1
 fi 
 
-dnf list installed MongoDB
+dnf list installed mysql
 if [ $? -ne 0 ]
 then 
-    echo "MongoDB is not installed ... now going to install"
-    dnf install mongodb -y
+    echo "MySQL is not installed ... now going to install"
+    dnf install mysql -y
     
 else
-   echo "MongoDB is installed ... nothing to do"
+   echo "MySQL is installed ... nothing to do"
    
 
  if [ $? -eq 0 ]  # [ 0 = 0 ]
  then
-    echo "Installing MongoDB is ... SUCCESS"
+    echo "Installing MySQL is ... SUCCESS"
  else
-   echo "Installing MongoDB is ... FAILURE"
+   echo "Installing MySQL is ... FAILURE"
    exit 1 # give other than 0 up to  127
  fi
 fi
