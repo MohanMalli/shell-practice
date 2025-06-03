@@ -16,18 +16,18 @@ N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
-    echo "$R ERROR:: Please run the Script with Root Access $N"
+    echo " $R ERROR:: Please run the Script with Root Access $N "
     exit 1
 else
-    echo "$G Your Running with Root Access $N"  
+    echo " $G Your Running with Root Access $N "  
 fi
 
 VALIDATE(){
 if [ $1 -eq 0 ]
 then
-    echo -e  "$2 is ...  $G SUCCESS $N"
+    echo -e  " $2 is ...  $G SUCCESS $N "
 else
-    echo -e  "$2 is ... $R FAILURE $N"
+    echo -e  " $2 is ... $R FAILURE $N "
     exit 1
 fi     
 }
