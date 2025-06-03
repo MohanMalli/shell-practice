@@ -8,9 +8,9 @@ DAYS=${3:-14}
 LOGS_FOLDER="/var/log/sheelscript-logs"
 SCRIPT_NAME="(echo $0 | cut -d "." -f1)"
 LOG_FILE="$LOGS_FOLDER/backup-log"
-R="\e[31"
-G="\e[32"
-Y="\e[33"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
 
